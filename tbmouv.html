@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-en="TBM'ouv project | Laora Aimi">Projet TBM'ouv | Laora Aimi</title>
+  <meta name="description" content="Étude de cas : outil d'analyse des données de fréquentation du réseau TBM (Bordeaux), projet de dernière année à l'ENSEIRB-MATMECA pour le Lab TBM'ouv.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%237B3FE4'/%3E%3Cpath d='M8 44 L22 44 L30 20 L42 50 L56 18' fill='none' stroke='white' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip" href="#contenu" data-en="Skip to content">Aller au contenu</a>
+
+  <header class="bar">
+    <a class="brand" href="index.html">Laora Aimi</a>
+    <nav aria-label="Navigation principale">
+      <a href="index.html#projets" data-en="All projects">Tous les projets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button>
+  </header>
+
+  <main id="contenu">
+    <!-- ================= EN-TÊTE ================= -->
+    <section class="case-head wrap">
+      <p class="crumb"><a class="link" href="index.html#projets" data-en="Projects">Projets</a></p>
+      <h1 class="case-title" data-en="Statistical adjustment of TBM ridership data">Ajustement statistique des données de fréquentation du réseau TBM</h1>
+      <p class="lead" data-en="A web tool with an interactive map and charts to compare real validations with the planned service and look for correlations with weather and events. Final-year project at ENSEIRB-MATMECA, built for the TBM'ouv innovation lab.">Un outil web avec carte interactive et graphiques pour comparer les validations réelles à l'offre prévue et chercher des corrélations avec la météo et les événements. Projet de dernière année à l'ENSEIRB-MATMECA, réalisé pour le laboratoire d'innovation TBM'ouv.</p>
+
+      <dl class="facts">
+        <div><dt data-en="Type">Type</dt><dd data-en="Final-year project, ENSEIRB-MATMECA">Projet de dernière année, ENSEIRB-MATMECA</dd></div>
+        <div><dt data-en="Team">Équipe</dt><dd data-en="5 students">5 étudiants</dd></div>
+        <div><dt data-en="For">Pour</dt><dd data-en="Lab TBM'ouv (Bordeaux public transport)">Lab TBM'ouv (transports de Bordeaux)</dd></div>
+        <div><dt data-en="Stack">Stack</dt><dd>React, TypeScript, Plotly, FastAPI, PostgreSQL, Docker</dd></div>
+      </dl>
+
+      <p class="actions">
+        <a class="btn primary" href="assets/slides/TBMouv_slides_FR.pdf" data-en="Slides (French)">Diapositives (français)</a>
+        <a class="btn" href="assets/slides/TBMouv_slides_EN.pdf" data-en="Slides (English)">Diapositives (anglais)</a>
+      </p>
+    </section>
+
+    <!-- ================= CONTEXTE ================= -->
+    <section class="sec wrap">
+      <h2 data-en="The problem">Le problème</h2>
+      <div class="prose">
+        <p data-en="TBM runs trams, buses, boats and self-service bikes for more than 28 municipalities and about 800,000 inhabitants in the Bordeaux metropolitan area. Its lab, TBM'ouv, wanted to make better use of the data the network already collects.">TBM gère les tramways, bus, bateaux et vélos en libre-service d'une métropole de plus de 28 municipalités et 800 000 habitants. Son laboratoire d'innovation, TBM'ouv, voulait mieux exploiter les données déjà collectées.</p>
+        <ul class="plain">
+          <li data-en="A large volume of data was left unused.">Un volume important de données restait inexploité.</li>
+          <li data-en="There was no way to visualise it.">Il n'existait pas de moyen de les visualiser.</li>
+          <li data-en="The consequences of forecasts were not analysed.">Les conséquences des prévisions n'étaient pas analysées.</li>
+        </ul>
+        <p data-en="Our goal: a tool that makes the data easier to analyse, to compare what was planned with what actually happened, and to look for correlations between validations and other parameters such as weather and events.">Notre objectif : un outil qui facilite l'analyse, pour comparer ce qui était prévu à ce qui s'est réellement passé, et chercher des corrélations entre les validations et d'autres paramètres comme la météo et les événements.</p>
+      </div>
+    </section>
+
+    <!-- ================= SOLUTION ================= -->
+    <section class="sec wrap">
+      <h2 data-en="The solution">La solution</h2>
+
+      <h3 data-en="An interactive map of the network">Une carte interactive du réseau</h3>
+      <figure class="shot">
+        <a href="assets/tbm/carte-reseau.webp" target="_blank" rel="noopener"><img src="assets/tbm/carte-reseau.webp" width="1600" height="1248" loading="lazy" alt="Carte interactive du réseau de tramways TBM avec les lignes A, B, C et D" data-en="Interactive map of the TBM tram network with lines A, B, C and D"></a>
+        <figcaption data-en="The network is drawn on a map, from which a simulation and the analysis panel can be launched.">Le réseau est tracé sur une carte, d'où l'on lance la simulation et le panneau d'analyse.</figcaption>
+      </figure>
+
+      <h3 data-en="A simulation to watch the network over time">Une simulation pour voir le réseau évoluer</h3>
+      <div class="pair">
+        <figure class="shot">
+          <a href="assets/tbm/simulation-config.webp" target="_blank" rel="noopener"><img src="assets/tbm/simulation-config.webp" width="1600" height="838" loading="lazy" alt="Panneau de configuration de la simulation : période, granularité, vitesse" data-en="Simulation settings panel: period, granularity, speed"></a>
+          <figcaption data-en="Choose a period, a granularity (minute to year) and a playback speed (x1 to x10).">Choix de la période, de la granularité (de la minute à l'année) et de la vitesse de lecture (x1 à x10).</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/tbm/carte-thermique.webp" target="_blank" rel="noopener"><img src="assets/tbm/carte-thermique.webp" width="1600" height="910" loading="lazy" alt="Carte thermique des validations par station, avec la température affichée" data-en="Heat map of validations by station, with the temperature displayed"></a>
+          <figcaption data-en="The heat map shows validations per station over time, next to the weather. Quinconces dominates, and a student exit effect is visible.">La carte thermique montre les validations par station au fil du temps, à côté de la météo. Quinconces domine, et l'on voit un effet de sortie des étudiants.</figcaption>
+        </figure>
+      </div>
+
+      <h3 data-en="An analysis panel to build charts">Un panneau d'analyse pour construire des graphiques</h3>
+      <div class="pair">
+        <figure class="shot">
+          <a href="assets/tbm/panneau-analyse.webp" target="_blank" rel="noopener"><img src="assets/tbm/panneau-analyse.webp" width="1600" height="556" loading="lazy" alt="Panneau d'analyse des flux TBM : dates, granularité, séries, lignes, stations" data-en="TBM flow analysis panel: dates, granularity, series, lines, stations"></a>
+          <figcaption data-en="Pick dates, granularity, lines and stations, then the series to plot: validations, non-validations, events, disruptions, planned and real trams, rain, temperature.">On choisit les dates, la granularité, les lignes et les stations, puis les séries : validations, non-validations, événements, perturbations, trams prévus et réels, pluie, température.</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/tbm/graphique-flux.webp" target="_blank" rel="noopener"><img src="assets/tbm/graphique-flux.webp" width="1600" height="644" loading="lazy" alt="Graphique des validations par ligne, comparées aux trams prévus, avec les événements" data-en="Chart of validations by line, compared with planned trams, with events"></a>
+          <figcaption data-en="The generated chart overlays validations, planned service and events, with zoom and a range selector.">Le graphique généré superpose validations, offre prévue et événements, avec zoom et sélecteur de période.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= SOUS LE CAPOT ================= -->
+    <section class="sec wrap">
+      <h2 data-en="Under the hood">Sous le capot</h2>
+
+      <figure class="shot">
+        <a href="assets/tbm/architecture.webp" target="_blank" rel="noopener"><img src="assets/tbm/architecture.webp" width="1600" height="1161" loading="lazy" alt="Architecture : React, FastAPI, Python, PostgreSQL, Open-Meteo et fichiers bruts" data-en="Architecture: React, FastAPI, Python, PostgreSQL, Open-Meteo and raw files"></a>
+        <figcaption data-en="Architecture: a React front end talks to a FastAPI back end, which queries PostgreSQL and gets weather from Open-Meteo. Raw files are cleaned and loaded through a pipeline.">Architecture : un front React dialogue avec un back FastAPI, qui interroge PostgreSQL et récupère la météo via Open-Meteo. Les fichiers bruts passent par un pipeline de nettoyage puis de chargement.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3 data-en="Back end and data pipeline">Back end et pipeline de données</h3>
+        <ul class="plain">
+          <li data-en="Asynchronous REST API in Python with FastAPI and SQLModel, with business-oriented routes and dynamic filters through query parameters.">API REST asynchrone en Python avec FastAPI et SQLModel, routes orientées métier et filtres dynamiques via les paramètres de requête.</li>
+          <li data-en="Import of large volumes (CSV, Excel, GTFS) in chunks, then cleaning and normalisation, then loading into PostgreSQL with duplicate handling.">Import de gros volumes (CSV, Excel, GTFS) par blocs, puis nettoyage et normalisation, puis chargement dans PostgreSQL avec gestion des doublons.</li>
+          <li data-en="Python models act as the database schema: tables are created automatically and the database can be rebuilt from the code.">Les modèles Python servent de schéma de base : les tables sont créées automatiquement et la base est reproductible à partir du code.</li>
+          <li data-en="Open-Meteo weather service (no API key): average temperature and cumulative rain over the chosen period, with gaps filled when the API has holes.">Service météo Open-Meteo (sans clé d'API) : température moyenne et cumul de pluie sur la période choisie, avec complétion des données manquantes.</li>
+          <li data-en="Docker automates the setup: one docker compose up gives a structured, populated database ready to be queried.">Docker automatise l'installation : un docker compose up donne une base structurée et peuplée, prête à être interrogée.</li>
+        </ul>
+
+        <h3 data-en="Messy data, many sources">Des données hétérogènes, de nombreuses sources</h3>
+        <p data-en="We merged files of very different shapes and sizes: about 1.5 GB of validations (January 2023 to November 2025), 1.3 GB of tram schedules, 10 MB of disruptions, event calendars, spot counts of non-validations and 581 GTFS folders (about 20 GB).">Nous avons fusionné des fichiers de formes et de tailles très différentes : environ 1,5 Go de validations (janvier 2023 à novembre 2025), 1,3 Go d'horaires de trams, 10 Mo de perturbations, des calendriers d'événements, des comptages ponctuels de non-validations et 581 dossiers GTFS (environ 20 Go).</p>
+        <ul class="plain">
+          <li data-en="Redundant time information spread over many columns.">Informations temporelles redondantes réparties sur de nombreuses colonnes.</li>
+          <li data-en="Inconsistent default values, such as dates in 1899.">Valeurs par défaut incohérentes, comme des dates en 1899.</li>
+          <li data-en="The same vehicle identified differently in each file.">Un même véhicule identifié différemment dans chaque fichier.</li>
+          <li data-en="GTFS times above 24 hours (for example 25:13:42).">Heures GTFS supérieures à 24 h (par exemple 25:13:42).</li>
+        </ul>
+      </div>
+
+      <figure class="shot">
+        <a href="assets/tbm/schema-bdd.webp" target="_blank" rel="noopener"><img src="assets/tbm/schema-bdd.webp" width="1600" height="696" loading="lazy" alt="Schéma de la base de données : stations, lignes, validations, passages, événements, perturbations" data-en="Database schema: stations, lines, validations, passages, events, disruptions"></a>
+        <figcaption data-en="The resulting database schema: stations, lines, validations, planned and real passages, events and disruptions.">Le schéma de base de données obtenu : stations, lignes, validations, passages prévus et réels, événements et perturbations.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= RÉSULTATS ================= -->
+    <section class="sec wrap">
+      <h2 data-en="What the data shows">Ce que les données montrent</h2>
+
+      <figure class="shot">
+        <a href="assets/tbm/cas-rugby.webp" target="_blank" rel="noopener"><img src="assets/tbm/cas-rugby.webp" width="1600" height="773" loading="lazy" alt="Pic de validations à la station Stade Chaban Delmas lors d'un match de rugby, avec perturbations" data-en="Validation spike at the Stade Chaban Delmas station during a rugby match, with disruptions"></a>
+        <figcaption data-en="Case study, 25 November 2023 at 3 pm: a spike in validations at Stade Chaban Delmas coincides with a Top 14 rugby match (Union Bordeaux-Bègles / Perpignan), a delayed train set and an interrupted line section. Business value: adapt the frequency late in the evening, when regular service usually drops.">Cas d'étude, 25 novembre 2023 à 15 h : un pic de validations à Stade Chaban Delmas coïncide avec un match de rugby de Top 14 (Union Bordeaux-Bègles / Perpignan), une rame retardée et une section de ligne interrompue. Intérêt commercial : adapter la fréquence tard le soir, quand le service régulier diminue habituellement.</figcaption>
+      </figure>
+
+      <div class="pair">
+        <figure class="shot">
+          <a href="assets/tbm/cas-pluie.webp" target="_blank" rel="noopener"><img src="assets/tbm/cas-pluie.webp" width="1600" height="867" loading="lazy" alt="Pluie, température et perturbations, à l'échelle du mois et du jour" data-en="Rain, temperature and disruptions, by month and by day"></a>
+          <figcaption data-en="Case study: rain and temperature against disruptions, at monthly and daily scale.">Cas d'étude : pluie et température face aux perturbations, à l'échelle du mois et du jour.</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="assets/tbm/cas-non-validations.webp" target="_blank" rel="noopener"><img src="assets/tbm/cas-non-validations.webp" width="1600" height="1042" loading="lazy" alt="Validations et non-validations par ligne, à l'heure" data-en="Validations and non-validations by line, hourly"></a>
+          <figcaption data-en="Case study: validations against non-validations (passengers counted without a validation), by line and by hour.">Cas d'étude : validations face aux non-validations (voyageurs comptés sans validation), par ligne et par heure.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= BILAN ================= -->
+    <section class="sec wrap">
+      <h2 data-en="Outcome">Bilan</h2>
+      <div class="prose">
+        <ul class="plain">
+          <li data-en="A working proof of concept was delivered to the lab.">Une preuve de concept fonctionnelle a été livrée au laboratoire.</li>
+          <li data-en="Better visibility of the data, and a path to optimise the service from real figures.">Meilleure visibilité des données et piste d'optimisation du service à partir de chiffres réels.</li>
+          <li data-en="Technical growth in Python, React, PostgreSQL, Docker and GitHub.">Montée en compétence sur Python, React, PostgreSQL, Docker et GitHub.</li>
+          <li data-en="Limits we identified: the Plotly library is not well suited to dynamic changes, and the heat map and the link to the charts can be improved.">Limites identifiées : la bibliothèque Plotly est peu adaptée aux changements dynamiques, et la carte thermique ainsi que le lien avec les graphiques sont à améliorer.</li>
+          <li data-en="Deployment: we compared a local setup (full control over sensitive data) with an online one (easier sharing, higher exposure risk).">Déploiement : nous avons comparé un déploiement local (contrôle total des données sensibles) à un déploiement en ligne (partage facilité, risque d'exposition plus élevé).</li>
+          <li data-en="Next step: predictive analysis.">Perspective : l'analyse prédictive.</li>
+        </ul>
+        <!-- À compléter : ajoute ici ta contribution personnelle au projet (back, front, pipeline, analyse...). -->
+        <p class="actions"><a class="btn" href="index.html#projets" data-en="Back to all projects">Retour aux projets</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span data-en="© 2026 Laora Aimi. Static site hosted on GitHub Pages.">© 2026 Laora Aimi. Site statique hébergé sur GitHub Pages.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laora Aimi | Portfolio</title>
+  <meta name="description" content="Portfolio de Laora Aimi, ingénieure en informatique et data, Master Motorsport Engineering Performance à l'ESTACA.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%237B3FE4'/%3E%3Cpath d='M8 44 L22 44 L30 20 L42 50 L56 18' fill='none' stroke='white' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+  <a class="skip" href="#projets" data-en="Skip to projects">Aller aux projets</a>
+
+  <header class="bar">
+    <a class="brand" href="#top">Laora Aimi</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets" data-en="Projects">Projets</a>
+      <a href="#parcours" data-en="Background">Parcours</a>
+      <a href="#competences" data-en="Skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero wrap">
+      <h1>Laora Aimi</h1>
+      <p class="role"
+         data-en="Computer science and data engineer, MSc Motorsport Engineering Performance (ESTACA)">Ingénieure en informatique et data, Master Motorsport Engineering Performance (ESTACA)</p>
+      <p class="lead"
+         data-en="I build databases, automated pipelines and dashboards, and I'm learning to put them to work trackside: telemetry, race strategy, engineering debriefs.">Je conçois des bases de données, des pipelines automatisés et des tableaux de bord, et j'apprends à les mettre au service de la piste : télémétrie, stratégie de course, débriefings d'ingénieur.</p>
+      <p class="actions">
+        <a class="btn primary" href="#projets" data-en="See projects">Voir les projets</a>
+        <a class="btn" href="#contact" data-en="Get in touch">Me contacter</a>
+      </p>
+
+      <figure class="trace">
+        <div class="trace-frame" id="trace" aria-hidden="true"></div>
+        <p class="sr-only"
+           data-en="Illustrative chart of the speed of two cars over one lap, with simulated data.">Graphique illustratif de la vitesse de deux voitures sur un tour, avec des données simulées.</p>
+        <div class="readout" id="readout">
+          <div><span class="k" data-en="Distance">Distance</span><span class="v" id="r-dist">–</span></div>
+          <div><span class="k"><i class="sw a"></i><span data-en="Car A">Voiture A</span></span><span class="v" id="r-a">–</span></div>
+          <div><span class="k"><i class="sw b"></i><span data-en="Car B">Voiture B</span></span><span class="v" id="r-b">–</span></div>
+          <div><span class="k" data-en="Gap B to A">Écart B / A</span><span class="v" id="r-d">–</span></div>
+        </div>
+        <figcaption
+          data-en="Illustrative speed trace (simulated data): two cars over one lap, split into three sectors. Hover or drag across the chart to read speed and gap.">Tracé de vitesse illustratif (données simulées) : deux voitures sur un tour, découpé en trois secteurs. Survolez ou glissez sur le graphique pour lire la vitesse et l'écart.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= PROJETS ================= -->
+    <section class="sec wrap" id="projets">
+      <h2 data-en="Projects">Projets</h2>
+
+      <div class="filters" role="group" aria-label="Filtrer les projets">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true" data-en="All">Tous</button>
+        <button type="button" class="chip" data-filter="motorsport" aria-pressed="false" style="--cat:var(--purple)"><i class="sw"></i><span data-en="Motorsport &amp; data">Sport auto &amp; data</span></button>
+        <button type="button" class="chip" data-filter="pro" aria-pressed="false" style="--cat:var(--green)"><i class="sw"></i><span data-en="Internships">Stages</span></button>
+        <button type="button" class="chip" data-filter="academic" aria-pressed="false" style="--cat:var(--yellow)"><i class="sw"></i><span data-en="Academic projects">Projets académiques</span></button>
+      </div>
+
+      <div class="projects" id="projects">
+
+        <!-- Sport auto & data -->
+        <details class="proj" data-cat="motorsport">
+          <summary>
+            <span class="main">
+              <strong data-en="McLaren intra-team comparison, 2025 Hungarian GP">Comparaison intra-équipe McLaren, GP de Hongrie 2025</strong>
+              <span class="blurb" data-en="Norris vs Piastri: sector times, driving styles and tyre degradation.">Norris contre Piastri : temps par secteur, styles de pilotage et dégradation des pneus.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Motorsport &amp; data project">Projet sport auto &amp; data</span>
+              <span class="tags" data-en="Data analysis, visualisation">Analyse de données, visualisation</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Stint modelling.">Modélisation des relais (stints).</li>
+              <li data-en="Strategy visualisations in the style of an engineering debrief.">Visualisations stratégiques dans le style d'un débriefing d'ingénieurs.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="motorsport">
+          <summary>
+            <span class="main">
+              <strong data-en="2024 Formula 1 season analysis report">Rapport d'analyse de la saison de F1 2024</strong>
+              <span class="blurb" data-en="A full LaTeX report on circuits, race strategies and performance trends.">Un rapport LaTeX complet sur les circuits, les stratégies de course et les tendances de performance.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Motorsport &amp; data project">Projet sport auto &amp; data</span>
+              <span class="tags">LaTeX<span data-en=", data analysis">, analyse de données</span></span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Circuit analysis, race strategies and performance trends.">Analyse des circuits, stratégies de course et tendances de performance.</li>
+              <li data-en="Professional formatting and consistent data presentation.">Mise en forme professionnelle et présentation homogène des données.</li>
+            </ul>
+            <p><a class="link" href="https://github.com/Laoraa/F1_Data_Analysis" target="_blank" rel="noopener" data-en="View the GitHub repository">Voir le dépôt GitHub</a></p>
+          </div>
+        </details>
+
+        <!-- Stages -->
+        <details class="proj" data-cat="pro">
+          <summary>
+            <span class="main">
+              <strong data-en="AI product matching for E.Leclerc">Rapprochement de produits par IA pour E.Leclerc</strong>
+              <span class="blurb" data-en="Product matching system, serverless cloud infrastructure and reporting dashboards.">Système de rapprochement de produits, infrastructure cloud serverless et tableaux de bord de reporting.</span>
+            </span>
+            <span class="meta">
+              <span data-en="BeTomorrow, 6-month internship (2026)">BeTomorrow, stage de 6 mois (2026)</span>
+              <span class="tags">GCP, Docker, Cloud Run Jobs, Data Studio</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Development of an AI-powered product matching system.">Développement d'un système de rapprochement de produits par IA.</li>
+              <li data-en="Serverless infrastructure on GCP (Docker, Cloud Run Jobs) giving the client full autonomy.">Infrastructure serverless sur GCP (Docker, Cloud Run Jobs) offrant au client une autonomie complète.</li>
+              <li data-en="Interactive Data Studio dashboards for client reporting.">Tableaux de bord Data Studio interactifs pour le reporting client.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="pro">
+          <summary>
+            <span class="main">
+              <strong data-en="I/O operations forecasting">Prévision des opérations d'entrées/sorties</strong>
+              <span class="blurb" data-en="Predictive models to optimise application performance.">Modèles prédictifs pour optimiser les performances d'applications.</span>
+            </span>
+            <span class="meta">
+              <span data-en="INRIA, 3-month internship (2025)">INRIA, stage de 3 mois (2025)</span>
+              <span class="tags" data-en="Machine learning, predictive modelling">Machine learning, modélisation prédictive</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Predictive models forecasting the I/O operations of applications.">Modèles prédictifs anticipant les opérations d'E/S des applications.</li>
+              <li data-en="Better prediction accuracy and application efficiency.">Amélioration de la précision des prédictions et de l'efficacité des applications.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="pro">
+          <summary>
+            <span class="main">
+              <strong data-en="Android app for spherical images">Application Android d'images sphériques</strong>
+              <span class="blurb" data-en="Generating spherical images from smartphone photos.">Génération d'images sphériques à partir de photos de smartphone.</span>
+            </span>
+            <span class="meta">
+              <span data-en="LORIA, 6-week internship (June 2023)">LORIA, stage de 6 semaines (juin 2023)</span>
+              <span class="tags" data-en="Android, image processing">Android, traitement d'image</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Image processing and mobile UI design.">Traitement d'image et conception de l'interface mobile.</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Projets académiques -->
+        <details class="proj" data-cat="academic">
+          <summary>
+            <span class="main">
+              <strong data-en="Statistical adjustment of TBM ridership data">Ajustement statistique des données de fréquentation du réseau TBM</strong>
+              <span class="blurb" data-en="A website with an interactive map and charts to spot correlations, built for the TBM'ouv lab.">Un site web avec carte interactive et graphiques pour repérer des corrélations, réalisé pour le laboratoire TBM'ouv.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Final-year project, ENSEIRB-MATMECA">Projet de dernière année, ENSEIRB-MATMECA</span>
+              <span class="tags" data-en="React, FastAPI, PostgreSQL, Plotly, Docker">React, FastAPI, PostgreSQL, Plotly, Docker</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Statistical adjustment of the ridership data of the TBM network.">Ajustement statistique des données de fréquentation du réseau TBM.</li>
+              <li data-en="Website with an interactive map and charts to identify correlations.">Site web avec carte interactive et graphiques pour identifier des corrélations.</li>
+              <li data-en="Project carried out for the TBM'ouv lab.">Projet réalisé pour le laboratoire TBM'ouv.</li>
+            </ul>
+            <p><a class="link" href="tbmouv.html" data-en="Read the case study, with slides and screenshots">Lire l'étude de cas, avec diapositives et captures d'écran</a></p>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="academic">
+          <summary>
+            <span class="main">
+              <strong data-en="Clash Royale matchmaking analysis (Hadoop)">Analyse du matchmaking de Clash Royale (Hadoop)</strong>
+              <span class="blurb" data-en="Distributed statistical analysis of 35 million games to check whether matchmaking is random.">Analyse statistique distribuée de 35 millions de parties pour vérifier si le matchmaking est aléatoire.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Academic project, big data">Projet académique, big data</span>
+              <span class="tags">Hadoop MapReduce, Java, Python</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Observed frequencies compared with theoretical ones, to test the randomness of matchmaking.">Comparaison des fréquences observées et théoriques pour tester le caractère aléatoire du matchmaking.</li>
+              <li data-en="Hadoop MapReduce jobs written in Java and run on a cluster.">Traitements Hadoop MapReduce écrits en Java et exécutés sur un cluster.</li>
+              <li data-en="Python scripts for the analysis and visualisations, and benchmarks on datasets from 100,000 to 35 million games.">Scripts Python pour l'analyse et les visualisations, et benchmarks sur des jeux de données de 100 000 à 35 millions de parties.</li>
+            </ul>
+            <p><a class="link" href="https://github.com/jules-maulard/clash-royale-analytics" target="_blank" rel="noopener" data-en="View the GitHub repository">Voir le dépôt GitHub</a></p>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="academic">
+          <summary>
+            <span class="main">
+              <strong data-en="Audio-to-score converter">Convertisseur audio vers partition</strong>
+              <span class="blurb" data-en="An AI system turning audio recordings into MIDI files and musical scores.">Un système d'IA qui convertit des enregistrements audio en fichiers MIDI et en partitions musicales.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Academic project, team of 5, 2 months">Projet académique, équipe de 5, 2 mois</span>
+              <span class="tags" data-en="Python, AI">Python, IA</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Developed in Python within a team of 5.">Développé en Python au sein d'une équipe de 5.</li>
+            </ul>
+            <p><a class="link" href="https://github.com/ClutchKoenig/Keio_Music_Transcription" target="_blank" rel="noopener" data-en="View the GitHub repository">Voir le dépôt GitHub</a></p>
+          </div>
+        </details>
+
+        <details class="proj" data-cat="academic">
+          <summary>
+            <span class="main">
+              <strong data-en="Autonomous cars">Voitures autonomes</strong>
+              <span class="blurb" data-en="A program that lets cars map their environment.">Un programme permettant à des voitures de cartographier leur environnement.</span>
+            </span>
+            <span class="meta">
+              <span data-en="Academic project, team of 4, 4 months">Projet académique, équipe de 4, 4 mois</span>
+              <span class="tags" data-en="Python, mapping">Python, cartographie</span>
+            </span>
+          </summary>
+          <div class="detail">
+            <ul>
+              <li data-en="Project manager for a team of 4.">Cheffe de projet d'une équipe de 4.</li>
+              <li data-en="Developed in Python.">Développé en Python.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= PARCOURS ================= -->
+    <section class="sec wrap" id="parcours">
+      <h2 data-en="Background">Parcours</h2>
+
+      <div class="about">
+        <figure class="portrait">
+          <img src="assets/photo.jpg" alt="Portrait de Laora Aimi" width="320" height="400" onerror="this.closest('figure').hidden=true">
+        </figure>
+        <p data-en="I trained as a computer science engineer and I'm now preparing an MSc in Motorsport Engineering Performance at ESTACA. What I enjoy: taking raw data, turning it into something readable, and building the tool that lets a team use it on its own. Away from the screen: fencing (national-level competitor until 2020, regional referee for 5 years), Pokémon UNITE (manager and data analyst of a European team), crochet, drawing and lighting design.">Ingénieure en informatique de formation, je prépare un Master Motorsport Engineering Performance à l'ESTACA. Ce qui me plaît : prendre des données brutes, en tirer quelque chose de lisible et construire l'outil qui permet à une équipe de s'en servir seule. Hors écran : escrime (compétitrice de niveau national jusqu'en 2020, arbitre régionale pendant 5 ans), Pokémon UNITE (manager et data analyst d'une équipe européenne), crochet, dessin et scénographie lumière.</p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3 data-en="Education">Formation</h3>
+          <ol class="timeline">
+            <li>
+              <span class="when">2026 – 2027</span>
+              <div>
+                <strong data-en="ESTACA, MSc Motorsport Engineering Performance">ESTACA, Master Motorsport Engineering Performance</strong>
+                <span class="where">Laval</span>
+                <p data-en="Track data acquisition and analysis (Motec, WINTAX), data processing in MATLAB, race strategy (Trackside), driving a Formula 4 (FFSA).">Acquisition et analyse de données de piste (Motec, WINTAX), traitement de données sous MATLAB, stratégie de course (Trackside), pilotage d'une Formule 4 (FFSA).</p>
+              </div>
+            </li>
+            <li>
+              <span class="when" data-en="Apr – Aug 2025">avr. – août 2025</span>
+              <div>
+                <strong>Keio University</strong>
+                <span class="where" data-en="Tokyo, Japan">Tokyo, Japon</span>
+                <p data-en="Exchange semester: machine intelligence and computer vision.">Semestre d'échange : intelligence artificielle et vision par ordinateur.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2023 – 2026</span>
+              <div>
+                <strong data-en="ENSEIRB-MATMECA, engineering degree in computer science">ENSEIRB-MATMECA, diplôme d'ingénieur en informatique</strong>
+                <span class="where">Bordeaux</span>
+                <p data-en="Specialisation in software engineering and data analysis.">Spécialisation en génie logiciel et analyse de données.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 data-en="Experience">Expériences</h3>
+          <ol class="timeline">
+            <li>
+              <span class="when">2026</span>
+              <div>
+                <strong data-en="BeTomorrow, 6-month internship">BeTomorrow, stage de 6 mois</strong>
+                <span class="where">Bordeaux</span>
+                <p data-en="AI product matching, serverless GCP infrastructure and Data Studio dashboards for E.Leclerc.">Rapprochement de produits par IA, infrastructure GCP serverless et tableaux de bord Data Studio pour E.Leclerc.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2025</span>
+              <div>
+                <strong data-en="INRIA, 3-month internship">INRIA, stage de 3 mois</strong>
+                <span class="where">Bordeaux</span>
+                <p data-en="Predictive models to forecast I/O operations.">Modèles prédictifs pour prévoir les opérations d'E/S.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when" data-en="June 2023">juin 2023</span>
+              <div>
+                <strong data-en="LORIA, 6-week internship">LORIA, stage de 6 semaines</strong>
+                <span class="where">Nancy</span>
+                <p data-en="Android app generating spherical images from smartphone photos.">Application Android générant des images sphériques à partir de photos de smartphone.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPÉTENCES ================= -->
+    <section class="sec wrap" id="competences">
+      <h2 data-en="Skills">Compétences</h2>
+      <dl class="specs">
+        <div>
+          <dt data-en="Programming">Programmation</dt>
+          <dd>Python, C, C++, Java, TypeScript, HTML/CSS, SQL, MATLAB</dd>
+        </div>
+        <div>
+          <dt data-en="Data &amp; analysis">Data &amp; analyse</dt>
+          <dd data-en="pandas, NumPy, scikit-learn, matplotlib, seaborn, predictive modelling, machine learning (regression, classification, clustering), data visualisation">pandas, NumPy, scikit-learn, matplotlib, seaborn, modélisation prédictive, machine learning (régression, classification, clustering), visualisation de données</dd>
+        </div>
+        <div>
+          <dt data-en="Tools">Outils</dt>
+          <dd>Motec, WINTAX, Git/GitHub, Docker, Terraform, GCP (Cloud Run, GCS), Data Studio / Power BI</dd>
+        </div>
+        <div>
+          <dt data-en="Languages">Langues</dt>
+          <dd data-en="French (native), English (C1, TOEIC 950/990), German (A2), Japanese (beginner)">Français (langue maternelle), anglais (C1, TOEIC 950/990), allemand (A2), japonais (débutant)</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="sec wrap contact" id="contact">
+      <h2>Contact</h2>
+      <p class="contact-lead"
+         data-en="An internship, a project, a question about my analyses: write to me. I'm looking for a 6-month internship starting March 2027.">Un stage, un projet, une question sur mes analyses : écrivez-moi. Je recherche un stage de 6 mois à partir de mars 2027.</p>
+      <p><a class="mail" href="mailto:laora.aimi@gmail.com">laora.aimi@gmail.com</a></p>
+      <ul class="links">
+        <li><a class="link" href="https://linkedin.com/in/laora-aimi" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="link" href="https://github.com/Laoraa" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="link" href="assets/CV_Laora_Aimi.pdf" data-en="Download my CV (PDF)">Télécharger mon CV (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span data-en="© 2026 Laora Aimi. Static site hosted on GitHub Pages.">© 2026 Laora Aimi. Site statique hébergé sur GitHub Pages.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
