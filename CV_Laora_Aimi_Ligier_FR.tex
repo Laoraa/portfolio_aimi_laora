@@ -1,0 +1,146 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[margin=1.4cm, top=0.7cm, bottom=0.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\linespread{0.95}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\frenchbsetup{StandardLists=true}
+
+% ---------- Style des sections (noir et blanc) ----------
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\vspace{-0.55em}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% ---------- Listes ----------
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% ---------- Commandes ----------
+% \entry{Titre}{Date}{Sous-titre / lieu}
+\newcommand{\entry}[3]{%
+  \textbf{#1} \hfill \textbf{#2}\\
+  \textit{#3}\par\vspace{-2pt}
+}
+% \entryone{Titre}{Date}  (sans sous-titre)
+\newcommand{\entryone}[2]{%
+  \textbf{#1} \hfill \textbf{#2}\par\vspace{-2pt}
+}
+
+\begin{document}
+
+% ---------- En-tête avec photo ----------
+% Place ta photo dans le même dossier sous le nom photo.jpg (ou change le nom ci-dessous)
+\newcommand{\photo}{%
+  \IfFileExists{photo.jpg}{%
+    \includegraphics[width=2.5cm,height=3.1cm]{photo.jpg}}{%
+    \fbox{\parbox[c][3.1cm][c]{2.5cm}{\centering\small Photo}}}%
+}
+\noindent
+\begin{minipage}[c]{0.77\textwidth}
+  {\huge\bfseries Laora Aimi}\\[5pt]
+  {\Large\bfseries Stage Ingénieure Support Client -- Programmes}\\[1pt]
+  {\large Stage de 6 mois, à partir de mars 2027}\\[6pt]
+  \href{mailto:laora.aimi@gmail.com}{laora.aimi@gmail.com} \ $|$ \ +33 7 81 74 44 45 \ $|$ \ Laval, France\\
+  \href{https://www.linkedin.com/in/laora-aimi-493285253}{linkedin.com/in/laora-aimi-493285253} \ $|$ \
+  \href{https://github.com/Laoraa}{github.com/Laoraa}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.2\textwidth}
+  \raggedleft\photo
+\end{minipage}
+
+\vspace{-2pt}
+% ---------- Profil ----------
+\section{Profil}
+Étudiante en Master Motorsport Engineering Performance à l'ESTACA, formée à l'acquisition et à l'analyse de données de piste (Motec), avec une solide formation en informatique et data : bases de données, pipelines automatisés, outils de visualisation. Passionnée de sport automobile et très mobile, je suis motivée à me déplacer sur les circuits, en France comme à l'étranger, pour assister les équipes en piste.
+
+% ---------- Formation ----------
+\section{Formation}
+
+\entryone{ESTACA -- Master Motorsport Engineering Performance, Laval}{2026 -- 2027}
+\begin{itemize}
+  \item \textbf{Données de piste :} acquisition par capteurs, analyse de performance (Motec), analyse sur simulateur (WINTAX), traitement de données sous MATLAB
+  \item \textbf{Opérations en piste :} stratégie de course (Trackside), analyse du comportement pilote, pilotage d'une Formule 4 (FFSA)
+\end{itemize}
+
+\vspace{2pt}
+\entryone{ENSEIRB-MATMECA -- Diplôme d'ingénieur en informatique, Bordeaux}{2023 -- 2026}
+\begin{itemize}
+  \item Spécialisation en génie logiciel et analyse de données
+  \item Semestre d'échange à \textbf{Keio University}, Tokyo (avr. -- août 2025) : intelligence artificielle et vision par ordinateur
+\end{itemize}
+
+% ---------- Expérience professionnelle ----------
+\section{Expérience professionnelle}
+
+\entryone{BeTomorrow -- Stage de 6 mois, Bordeaux}{2026}
+\begin{itemize}
+  \item Développement d'un système de rapprochement de produits par IA pour E.Leclerc.
+  \item Infrastructure cloud serverless sur GCP (Docker, Cloud Run Jobs) offrant au client une autonomie complète.
+  \item Conception et déploiement de tableaux de bord Data Studio interactifs pour le reporting client.
+\end{itemize}
+
+\vspace{2pt}
+\entryone{INRIA -- Stage de 3 mois, Bordeaux}{2025}
+\begin{itemize}
+  \item Construction de modèles prédictifs pour optimiser les performances d'applications en anticipant les opérations d'E/S.
+  \item Amélioration de la précision des prédictions et de l'efficacité des applications.
+\end{itemize}
+
+\vspace{2pt}
+\entryone{LORIA -- Stage de 6 semaines, Nancy}{Juin 2023}
+\begin{itemize}
+  \item Développement d'une application Android générant des images sphériques à partir de photos de smartphone.
+\end{itemize}
+
+% ---------- Projets sport auto & data ----------
+\section{Projets sport automobile \& data}
+
+\entryone{Étude de cas data : comparaison intra-équipe McLaren (GP de Hongrie 2025)}{}
+\begin{itemize}
+  \item Analyse Norris vs Piastri (temps par secteur, styles de pilotage, dégradation des pneus), avec modélisation des relais et visualisations stratégiques dans le style d'un débriefing d'ingénieurs.
+\end{itemize}
+
+\vspace{2pt}
+\entryone{Rapport d'analyse de la saison de F1 2024}{\href{https://github.com/Laoraa/F1_Data_Analysis}{\normalfont\small github.com/Laoraa/F1\_Data\_Analysis}}
+\begin{itemize}
+  \item Rapport \LaTeX{} complet sur la saison 2024 (circuits, stratégies de course, tendances de performance)
+\end{itemize}
+
+% ---------- Projets académiques ----------
+\section{Projets académiques}
+
+\entryone{Convertisseur audio vers partition (Python)}{Équipe de 5 -- 2 mois}
+\begin{itemize}
+  \item Développement d'un système d'IA capable de convertir des enregistrements audio en fichiers MIDI et en partitions musicales.
+\end{itemize}
+
+\vspace{2pt}
+\entryone{Voitures autonomes (Python)}{Équipe de 4 -- 4 mois}
+\begin{itemize}
+  \item Cheffe de projet : réalisation d'un programme permettant aux voitures de cartographier leur environnement.
+\end{itemize}
+
+% ---------- Compétences ----------
+\section{Compétences \& langues}
+\begin{itemize}[label={}, leftmargin=0pt, itemsep=2pt]
+  \item \textbf{Programmation :} Python, C, C++, SQL, Java, TypeScript, HTML/CSS, MATLAB
+  \item \textbf{Data \& analyse :} pandas, NumPy, scikit-learn, matplotlib, seaborn, modélisation prédictive, machine learning (régression, classification, clustering), visualisation de données
+  \item \textbf{Outils :} Motec, WINTAX, Git/GitHub, Docker, Terraform, GCP (Cloud Run, GCS), Data Studio / Power BI
+  \item \textbf{Langues :} français (langue maternelle), anglais (C1, TOEIC 950/990), allemand (A2), japonais (débutant)
+\end{itemize}
+
+% ---------- Centres d'intérêt ----------
+\section{Centres d'intérêt}
+Escrime (niveau national, arbitre régional) \ $|$ \ Esport : manager et data analyst d'une leading team sur \textit{Pok\'emon UNITE} \ $|$ \ Crochet, dessin, conception lumière
+
+\end{document}

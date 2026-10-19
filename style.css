@@ -116,6 +116,10 @@ a { color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero { padding-block: clamp(40px, 8vw, 88px) clamp(40px, 6vw, 72px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px 48px; align-items: end; }
+.hero-grid:has(.portrait[hidden]) { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 760px) { .hero-grid { grid-template-columns: 1fr; } .hero-grid .portrait { order: -1; } }
+.hero .facts { margin-top: clamp(32px, 5vw, 56px); }
 .hero h1 {
   font-family: var(--display); font-weight: 700;
   font-size: clamp(2.7rem, 9.2vw, 7rem);
@@ -137,59 +141,6 @@ a { color: inherit; }
 .btn:hover { background: var(--ink); color: var(--bg); }
 .btn.primary { background: var(--purple); border-color: var(--purple); color: var(--on-purple); }
 .btn.primary:hover { filter: brightness(1.08); background: var(--purple); color: var(--on-purple); }
-
-/* ---------- Télémétrie ---------- */
-.trace { margin-top: clamp(36px, 6vw, 64px); }
-.trace-frame {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 6px 6px 0 0;
-  padding: 8px 8px 0;
-}
-.trace-frame svg {
-  display: block; width: 100%; height: auto;
-  touch-action: pan-y; cursor: crosshair;
-}
-.trace .grid { stroke: var(--line); stroke-width: 1; }
-.trace .axis-text { fill: var(--muted); font: 500 11px var(--body); }
-.trace .sector-text { fill: var(--muted); font: 600 12px var(--body); }
-.trace .sector-bg { fill: var(--sector-tint); }
-.trace .line { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
-.trace .line.a { stroke: var(--trace-a); }
-.trace .line.b { stroke: var(--trace-b); }
-.trace .cursor { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
-.trace .dot.a { fill: var(--trace-a); }
-.trace .dot.b { fill: var(--trace-b); }
-.trace .dot { stroke: var(--surface); stroke-width: 2; }
-
-/* Tracé dessiné une seule fois au chargement */
-.trace .line { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.trace.drawn .line { stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s cubic-bezier(.5, 0, .2, 1); }
-.trace.drawn .line.b { transition-delay: 0.25s; }
-@media (prefers-reduced-motion: reduce) {
-  .trace .line { stroke-dashoffset: 0; transition: none !important; }
-}
-
-.readout {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  background: var(--surface);
-  border: 1px solid var(--line); border-top: 0;
-  border-radius: 0 0 6px 6px;
-}
-.readout > div { padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
-.readout > div + div { border-left: 1px solid var(--line); }
-.readout .k { font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 7px; }
-.readout .v { font-weight: 600; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
-.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; flex: none; }
-.sw.a { background: var(--trace-a); }
-.sw.b { background: var(--trace-b); }
-.trace figcaption { margin-top: 12px; font-size: 0.9rem; color: var(--muted); max-width: 78ch; }
-
-@media (max-width: 640px) {
-  .readout { grid-template-columns: 1fr 1fr; }
-  .readout > div:nth-child(3) { border-left: 0; }
-  .readout > div:nth-child(n+3) { border-top: 1px solid var(--line); }
-}
 
 /* ---------- Sections ---------- */
 .sec { padding-block: clamp(48px, 7vw, 88px); border-top: 1px solid var(--line); }
@@ -213,48 +164,38 @@ h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
 .projects { border-bottom: 1px solid var(--line); }
-.proj { position: relative; border-top: 1px solid var(--line); }
+.proj {
+  position: relative; display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 20px;
+  gap: 8px 32px; align-items: start;
+  padding: 22px 12px 22px 24px;
+  border-top: 1px solid var(--line);
+  color: inherit; text-decoration: none;
+}
 .proj::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--cat); }
 .proj[data-cat="motorsport"] { --cat: var(--purple); }
 .proj[data-cat="pro"] { --cat: var(--green); }
 .proj[data-cat="academic"] { --cat: var(--yellow); }
 .proj[hidden] { display: none; }
-
-.proj summary {
-  list-style: none; cursor: pointer;
-  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 20px;
-  gap: 8px 32px; align-items: start;
-  padding: 22px 12px 22px 24px;
-}
-.proj summary::-webkit-details-marker { display: none; }
-.proj summary:hover { background: var(--surface); }
-.proj summary::after {
-  content: ""; grid-column: 3; grid-row: 1; justify-self: end; margin-top: 8px;
+.proj:hover { background: var(--surface); }
+.proj::after {
+  content: ""; grid-column: 3; grid-row: 1; justify-self: end; margin-top: 9px;
   width: 9px; height: 9px;
-  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  border-right: 2px solid var(--muted); border-top: 2px solid var(--muted);
   transform: rotate(45deg); transition: transform 0.2s ease;
 }
-.proj[open] summary::after { transform: rotate(-135deg); margin-top: 12px; }
+.proj:hover::after { transform: translateX(4px) rotate(45deg); border-color: var(--purple); }
+.proj:hover .name { text-decoration: underline; text-decoration-color: var(--purple); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 .proj .main { display: flex; flex-direction: column; gap: 4px; }
-.proj .main strong { font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+.proj .name { font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
 .proj .blurb { color: var(--muted); max-width: 60ch; }
 .proj .meta { display: flex; flex-direction: column; gap: 2px; font-size: 0.95rem; }
 .proj .tags { color: var(--muted); font-size: 0.9rem; }
 
-.proj .detail { padding: 0 24px 24px 24px; max-width: 70ch; }
-.proj .detail ul { display: grid; gap: 6px; }
-.proj .detail li { position: relative; padding-left: 18px; }
-.proj .detail li::before {
-  content: ""; position: absolute; left: 0; top: 0.72em;
-  width: 8px; height: 2px; background: var(--cat);
-}
-.proj .detail p { margin-top: 14px; }
-
 @media (max-width: 760px) {
-  .proj summary { grid-template-columns: minmax(0, 1fr) 20px; padding-left: 20px; }
+  .proj { grid-template-columns: minmax(0, 1fr) 20px; padding-left: 20px; }
   .proj .meta { grid-column: 1; grid-row: 2; }
-  .proj summary::after { grid-row: 1; }
 }
 
 /* ---------- Liens ---------- */
@@ -266,19 +207,12 @@ h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
 .link:hover { color: var(--purple); }
 
 /* ---------- Parcours ---------- */
-.about {
-  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 32px;
-  align-items: start; margin-bottom: clamp(36px, 5vw, 56px);
-}
-.about:has(.portrait[hidden]) { grid-template-columns: minmax(0, 1fr); }
+.about { margin-bottom: clamp(36px, 5vw, 56px); }
 .about p { max-width: 68ch; }
-.portrait { width: clamp(150px, 20vw, 220px); }
+.portrait { width: clamp(170px, 22vw, 260px); }
 .portrait img {
   display: block; width: 100%; height: auto; aspect-ratio: 4 / 5;
   object-fit: cover; border-radius: 6px; border: 1px solid var(--line);
-}
-@media (max-width: 640px) {
-  .about { grid-template-columns: 1fr; }
 }
 
 .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; }
@@ -375,3 +309,20 @@ h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
 
 .sec .prose + .shot { margin-top: 32px; }
 .sec .shot + .prose { margin-top: 12px; }
+
+/* ---------- Pages projet ---------- */
+.sec h2 + .prose { margin-top: -8px; }
+.pnav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.pnav a {
+  display: block; padding: 16px 18px; text-decoration: none;
+  border: 1px solid var(--line); border-radius: 6px;
+}
+.pnav a:hover { border-color: var(--purple); background: var(--surface); }
+.pnav small { display: block; color: var(--muted); font-size: 0.85rem; }
+.pnav strong { font-weight: 600; }
+.pnav .next { text-align: right; grid-column: 2; }
+.pnav .prev { grid-column: 1; }
+@media (max-width: 560px) { .pnav { grid-template-columns: 1fr; } .pnav .next, .pnav .prev { grid-column: 1; text-align: left; } }
+.reflink { margin-top: 18px; }
+
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; flex: none; }

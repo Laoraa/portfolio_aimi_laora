@@ -1,0 +1,131 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.4cm, top=0.8cm, bottom=0.8cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+\linespread{0.96}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---------- Section style (black & white) ----------
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\vspace{-0.55em}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% ---------- Lists ----------
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
+
+% ---------- Custom commands ----------
+% \entry{Title}{Date}{Subtitle / Location}
+\newcommand{\entry}[3]{%
+  \textbf{#1} \hfill \textbf{#2}\\
+  \textit{#3}\par\vspace{-2pt}
+}
+% \entryone{Title}{Date}  (no subtitle)
+\newcommand{\entryone}[2]{%
+  \textbf{#1} \hfill \textbf{#2}\par\vspace{-2pt}
+}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\huge\bfseries Laora Aimi}\\[4pt]
+  Laval, France \ $|$ \ +33 7 81 74 44 45 \ $|$ \
+  \href{mailto:laora.aimi@gmail.com}{laora.aimi@gmail.com} \ $|$ \
+  \href{https://www.linkedin.com/in/laora-aimi-493285253}{linkedin.com/in/laora-aimi-493285253} \ $|$ \
+  \href{https://github.com/Laoraa}{github.com/Laoraa}
+\end{center}
+
+\vspace{-4pt}
+% ---------- Summary ----------
+\section{Summary}
+Motorsport Performance Engineering student at ESTACA with a solid software and data background, skilled in designing robust database structures, automated pipelines, and visualisation tools.
+
+% ---------- Education ----------
+\section{Education}
+
+\entryone{ESTACA -- MSc Motorsport Engineering Performance, Laval, France}{2026 -- 2027}
+\begin{itemize}
+  \item \textbf{Vehicle dynamics:} suspension, tyres, handling and vehicle setup
+  \item \textbf{Race engineering:} race strategy, performance analysis and trackside decision-making
+  \item \textbf{Telemetry \& data analysis:} acquisition, processing and interpretation of on-track data
+  \item \textbf{Trackside operations:} race weekend organisation and team workflow
+\end{itemize}
+
+\vspace{2pt}
+\entryone{ENSEIRB-MATMECA -- Engineering Degree in Computer Science, Bordeaux, France}{2023 -- 2026}
+\begin{itemize}
+  \item Specialisation in software engineering and data analysis
+  \item Exchange semester at \textbf{Keio University}, Tokyo, Japan (Apr -- Aug 2025): machine intelligence and computer vision
+\end{itemize}
+
+% ---------- Professional Experience ----------
+\section{Professional Experience}
+
+\entry{BeTomorrow -- 6-month Internship}{2026}{Bordeaux, France}
+\begin{itemize}
+  \item Developed an AI-powered product matching system for E.Leclerc.
+  \item Built a serverless cloud infrastructure on GCP (Docker, Cloud Run Jobs) giving the client full autonomy.
+  \item Designed and deployed interactive Data Studio dashboards for client reporting.
+\end{itemize}
+
+\vspace{2pt}
+\entry{INRIA -- 3-month Internship}{2025}{French National Institute for Research in Digital Science and Technology, Bordeaux, France}
+\begin{itemize}
+  \item Built predictive models to optimise application performance by forecasting I/O operations.
+  \item Improved prediction accuracy and overall application efficiency.
+\end{itemize}
+
+\vspace{2pt}
+\entry{LORIA -- 6-week Internship}{June 2023}{Lorraine Research Laboratory in Computer Science, Nancy, France}
+\begin{itemize}
+  \item Designed and developed an Android app generating spherical images from smartphone photos (image processing and mobile UI design).
+\end{itemize}
+
+% ---------- Motorsport & Data Projects ----------
+\section{Motorsport \& Data Projects}
+
+\entryone{Data-Driven Case Study: McLaren Intra-Team Comparison (2025 Hungarian GP)}{}
+\begin{itemize}
+  \item Compared Norris vs Piastri (sector times, driving styles, tyre degradation), including stint modelling and strategic visualisations in the style of an engineering debrief.
+\end{itemize}
+
+\vspace{2pt}
+\entryone{2024 F1 Season Analysis Report}{}
+\begin{itemize}
+  \item Wrote a full \LaTeX{} report on the 2024 Formula 1 season (circuit analysis, race strategies, performance trends) with consistent data presentation.
+  \item GitHub: \href{https://github.com/Laoraa/F1_Data_Analysis}{github.com/Laoraa/F1\_Data\_Analysis}
+\end{itemize}
+
+% ---------- Academic Projects ----------
+\section{Academic Projects}
+
+\textbf{Audio-to-Score Converter (Python)} -- team of 5, 2 months: developed an AI system converting audio recordings into MIDI files and musical scores.
+
+\vspace{2pt}
+\textbf{Autonomous Cars (Python)} -- team of 4, 4 months, project manager: wrote a program enabling cars to map their environment.
+
+% ---------- Skills ----------
+\section{Skills \& Languages}
+\begin{itemize}[label={}, leftmargin=0pt, itemsep=2pt]
+  \item \textbf{Data \& Analytics:} Python (pandas, NumPy, scikit-learn, matplotlib, seaborn), SQL, predictive modelling, machine learning (regression, classification, clustering), data visualisation
+  \item \textbf{Programming:} Python, C, C++, Java, TypeScript, HTML/CSS, SQL, MATLAB
+  \item \textbf{Tools:} Git/GitHub, Docker, Terraform, GCP (Cloud Run, GCS), Data Studio / Power BI
+  \item \textbf{Soft Skills:} Project management, teamwork, organisation, leadership, communication
+  \item \textbf{Languages:} French (native), English (C1, TOEIC 950/990), German (A2), Japanese (beginner)
+\end{itemize}
+
+% ---------- Languages ----------
+% ---------- Interests ----------
+\section{Interests}
+\textbf{Fencing:} national-level competitor and regional referee. \textbf{Esports:} Manager and Data Analyst of a leading European \textit{Pok\'emon UNITE} team. \textbf{Creative:} crochet, drawing, light design.
+
+\end{document}
